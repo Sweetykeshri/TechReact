@@ -1,0 +1,133 @@
+:root {
+  --primary-color: #C0FF00;
+  --bg-dark: #0A0A0A;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  background-color: rgba(10, 10, 10, 0.88);
+  backdrop-filter: blur(12px);
+  padding: 0.95rem 4.8%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(192, 255, 0, 0.08);
+}
+
+.navbar-logo a {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.navbar-brand-logo {
+  width: 250px;
+  height: auto;
+  display: block;
+}
+
+.navbar-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links li a {
+  color: rgba(229, 230, 224, 0.72);
+  text-decoration: none;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  transition: color 0.3s ease;
+}
+
+.navbar-links li a:hover {
+  color: var(--primary-color);
+}
+
+.nav-cta {
+  background-color: var(--primary-color);
+  color: #000;
+  padding: 0.62rem 1rem 0.62rem 1.1rem;
+  border-radius: 6px;
+  font-weight: 700;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.74rem;
+  letter-spacing: 0.4px;
+  box-shadow: 0 0 0 1px rgba(192, 255, 0, 0.22) inset;
+}
+
+.desktop-cta {
+  display: flex;
+}
+
+.mobile-toggle {
+  display: none;
+  font-size: 1.5rem;
+  color: #fff;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.mobile-cta {
+  display: none;
+  margin-top: 1rem;
+}
+
+@media (max-width: 1024px) {
+  .navbar-links {
+    gap: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .mobile-toggle {
+    display: block;
+  }
+
+  .desktop-cta {
+    display: none;
+  }
+
+  .navbar-links {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    height: 100vh;
+    background: #0d0d0d;
+    padding: 80px 40px;
+    gap: 2rem;
+    transition: 0.3s ease-in-out;
+    border-left: 1px solid rgba(192, 255, 0, 0.1);
+  }
+
+  .navbar-links.active {
+    right: 0;
+  }
+
+  .navbar-links li a {
+    font-size: 1rem;
+  }
+
+  .mobile-cta {
+    display: block;
+  }
+
+  .navbar-brand-logo {
+    width: 190px;
+  }
+}
