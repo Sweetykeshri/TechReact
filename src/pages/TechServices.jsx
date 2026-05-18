@@ -18,6 +18,7 @@ import { IoCalendarOutline } from 'react-icons/io5';
 import { FiShield, FiTrendingUp, FiLayers, FiLayout } from 'react-icons/fi';
 import { SiReact, SiNextdotjs, SiNodedotjs, SiTypescript, SiPython, SiGraphql, SiFirebase, SiDocker, SiKubernetes, SiPostgresql, SiMongodb } from 'react-icons/si';
 import { FaAws, FaArrowRight, FaThLarge, FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube, FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from 'react-icons/fa';
+import techBg from '../assets/Tech_bg.png';
 import BrandLogo from '../components/BrandLogo';
 import './TechServices.css';
 // ensure Projects component is not imported here to avoid pulling Projects styles into this page
@@ -122,7 +123,8 @@ const services = [
 const TechServices = () => {
   return (
     <div className="tech-services-page">
-      <section className="tech-hero">
+      <section className="tech-hero" style={{ backgroundImage: `url(${techBg})` }}>
+        <div className="hero-overlay"></div>
         <div className="container">
           <div className="hero-split">
             {/* ... hero content ... */}
@@ -156,36 +158,6 @@ const TechServices = () => {
                 <button className="btn-secondary">
                   <IoCalendarOutline /> BOOK FREE CONSULTATION
                 </button>
-              </div>
-            </motion.div>
-
-            {/* ... hero visual ... */}
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1 }}
-              className="hero-visual"
-            >
-              <div className="visual-wrapper">
-                <img 
-                  src="/assets/tech-hero-bg.png" 
-                  alt="Operations Control Center" 
-                  className="main-image"
-                  onError={(e) => {
-                    e.target.src = 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1200';
-                  }}
-                />
-                <div className="glow-overlay"></div>
-                <div className="stat-card">
-                  <div className="stat-circle">
-                    <svg viewBox="0 0 100 100">
-                      <circle cx="50" cy="50" r="45" className="bg" />
-                      <circle cx="50" cy="50" r="45" className="fill" />
-                    </svg>
-                    <span className="stat-value">98%</span>
-                  </div>
-                </div>
-                <div className="k-logo">K</div>
               </div>
             </motion.div>
           </div>
@@ -238,12 +210,11 @@ const TechServices = () => {
                 whileHover={{ y: -10 }}
                 className="service-card"
               >
-                <div className="card-bg-gradient"></div>
                 <div className="card-icon">{service.icon}</div>
                 <h3 className="card-title">{service.title}</h3>
                 <ul className="card-list">
                   {service.items.map((item, i) => (
-                    <li key={i}>• {item}</li>
+                    <li key={i}>{item}</li>
                   ))}
                 </ul>
                 <a href="#" className="card-link">
