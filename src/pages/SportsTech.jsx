@@ -289,6 +289,7 @@ const SportsTech = () => {
           </div>
         </div>
       </section>
+      {/* Footer (shared) rendered from App.jsx */}
     </div>
   );
 };

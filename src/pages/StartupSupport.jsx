@@ -3,7 +3,6 @@ import { FaArrowRight, FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube, FaEnve
 import { HiOutlineCodeBracket } from 'react-icons/hi2';
 import { HiOutlineCalendar, HiOutlineLightBulb, HiOutlineChartBar, HiOutlineRocketLaunch } from 'react-icons/hi2';
 import { FiTarget, FiDollarSign, FiZap, FiLayers, FiShield, FiTrendingUp, FiPenTool, FiCheckCircle } from 'react-icons/fi';
-import BrandLogo from '../components/BrandLogo';
 import './StartupSupport.css';
 
 const whyCards = [
@@ -40,7 +39,36 @@ const whyCards = [
 ];
 
 const supportSteps = [
-  /* ... existing code ... */
+  {
+    id: '01',
+    icon: <HiOutlineLightBulb />,
+    title: 'Idea Validation',
+    desc: 'We help validate your concept with research, user interviews, and rapid prototypes so you build what users actually want.'
+  },
+  {
+    id: '02',
+    icon: <FiPenTool />,
+    title: 'Product Strategy & Design',
+    desc: 'Define clear product goals, customer journeys and UX that converts — ready for engineering handoff.'
+  },
+  {
+    id: '03',
+    icon: <HiOutlineCodeBracket />,
+    title: 'MVP Development',
+    desc: 'Ship a lean, testable MVP quickly using modern stacks so you can learn from real users.'
+  },
+  {
+    id: '04',
+    icon: <FiLayers />,
+    title: 'Scalable Architecture',
+    desc: 'Build maintainable, secure and scalable backends and infrastructure that grow with your startup.'
+  },
+  {
+    id: '05',
+    icon: <FiCheckCircle />,
+    title: 'Launch & Ongoing Support',
+    desc: 'From launch planning to continuous improvements and monitoring — we stay on to help you grow.'
+  }
 ];
 
 const getOffers = [
@@ -226,67 +254,7 @@ const StartupSupport = () => (
       </div>
     </section>
 
-    {/* Footer Section */}
-    <footer className="footer-section">
-      <div className="footer-main">
-        <div className="footer-branding">
-          <BrandLogo className="footer-logo" />
-          <p>
-            Kreed Tech is the technology & innovation arm of Kreedashala, 
-            empowering startups and organizations with cutting-edge digital solutions.
-          </p>
-          <div className="social-links">
-            <a href="#"><FaFacebookF /></a>
-            <a href="#"><FaInstagram /></a>
-            <a href="#"><FaLinkedinIn /></a>
-            <a href="#"><FaYoutube /></a>
-          </div>
-        </div>
-
-        <div className="footer-links-group">
-          <div className="footer-col">
-            <h4>QUICK LINKS</h4>
-            <ul>
-              <li><a href="/">Home</a></li>
-              <li><a href="/tech-services">Tech Services</a></li>
-              <li><a href="/startup-support">Startup Support</a></li>
-              <li><a href="/sports-tech">Sports Tech</a></li>
-              <li><a href="/projects">Projects</a></li>
-            </ul>
-          </div>
-          <div className="footer-col">
-            <h4>COMPANY</h4>
-            <ul>
-              <li><a href="/about-us">About Us</a></li>
-              <li><a href="#team">Our Team</a></li>
-              <li><a href="#careers">Careers</a></li>
-              <li><a href="#blog">Blog</a></li>
-              <li><a href="/contact">Contact</a></li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="footer-col contact-col">
-          <h4>CONTACT US</h4>
-          <div className="contact-item">
-            <div className="contact-icon"><FaEnvelope /></div>
-            <a href="mailto:hello@kreed.tech">hello@kreed.tech</a>
-          </div>
-          <div className="contact-item">
-            <div className="contact-icon"><FaPhoneAlt /></div>
-            <span>+91 12345 67890</span>
-          </div>
-          <div className="contact-item">
-            <div className="contact-icon"><FaMapMarkerAlt /></div>
-            <span>India</span>
-          </div>
-        </div>
-      </div>
-
-      <div className="footer-bottom">
-        <p>&copy; 2024 Ars Kreedashala Tech. All rights reserved.</p>
-      </div>
-    </footer>
+    {/* Footer (shared) - removed inline footer to use global Footer component */}
   </div>
 );
 

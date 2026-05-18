@@ -20,7 +20,7 @@ import { SiReact, SiNextdotjs, SiNodedotjs, SiTypescript, SiPython, SiGraphql, S
 import { FaAws, FaArrowRight, FaThLarge, FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube, FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from 'react-icons/fa';
 import BrandLogo from '../components/BrandLogo';
 import './TechServices.css';
-import Projects from './Projects';
+// ensure Projects component is not imported here to avoid pulling Projects styles into this page
 
 const techStack = [
   { icon: <SiReact color="#61DAFB" />, name: "React" },
@@ -314,83 +314,7 @@ const TechServices = () => {
         </div>
       </section>
 
-      {/* Footer Section */}
-      <footer className="footer-section">
-        {/* CTA Banner */}
-        <div className="cta-banner">
-          <div className="cta-content">
-            <h3>READY TO BUILD <span>SOMETHING AMAZING?</span></h3>
-            <p>Let's turn your idea into a powerful digital product.</p>
-          </div>
-          <div className="cta-actions">
-            <a href="#contact" className="btn-cta-primary">
-              TALK TO OUR EXPERTS <FaArrowRight />
-            </a>
-            <a href="#projects" className="btn-cta-secondary">
-              <FaThLarge /> VIEW OUR WORK <FaArrowRight />
-            </a>
-          </div>
-        </div>
-
-        <div className="footer-main">
-          <div className="footer-branding">
-            <BrandLogo className="footer-logo" />
-            <p>
-              Kreed Tech is the technology & innovation arm of Kreedashala,
-              empowering startups and organizations with cutting-edge digital solutions.
-            </p>
-            <div className="social-links">
-              <a href="#"><FaFacebookF /></a>
-              <a href="#"><FaInstagram /></a>
-              <a href="#"><FaLinkedinIn /></a>
-              <a href="#"><FaYoutube /></a>
-            </div>
-          </div>
-
-          <div className="footer-links-group">
-            <div className="footer-col">
-              <h4>QUICK LINKS</h4>
-              <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/tech-services">Tech Services</a></li>
-                <li><a href="/startup-support">Startup Support</a></li>
-                <li><a href="/sports-tech">Sports Tech</a></li>
-                <li><a href="/projects">Projects</a></li>
-              </ul>
-            </div>
-            <div className="footer-col">
-              <h4>COMPANY</h4>
-              <ul>
-                <li><a href="/about-us">About Us</a></li>
-                <li><a href="#team">Our Team</a></li>
-                <li><a href="#careers">Careers</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="/contact">Contact</a></li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="footer-col contact-col">
-            <h4>CONTACT US</h4>
-            <div className="contact-item">
-              <div className="contact-icon"><FaEnvelope /></div>
-              <a href="mailto:hello@kreed.tech">hello@kreed.tech</a>
-            </div>
-            <div className="contact-item">
-              <div className="contact-icon"><FaPhoneAlt /></div>
-              <span>+91 12345 67890</span>
-            </div>
-            <div className="contact-item">
-              <div className="contact-icon"><FaMapMarkerAlt /></div>
-              <span>India</span>
-            </div>
-          </div>
-        </div>
-
-        <div className="footer-bottom">
-          <p>&copy; 2024 Ars Kreedashala Tech. All rights reserved.</p>
-        </div>
-      </footer>
+      {/* Footer (shared) - removed inline footer to use global Footer component */}
     </div>
   );
 };

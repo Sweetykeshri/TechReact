@@ -4,7 +4,7 @@ import { HiArrowNarrowRight, HiOutlineMail, HiOutlinePhone, HiOutlineLocationMar
 import { FaFacebookF, FaLinkedinIn, FaInstagram, FaYoutube } from 'react-icons/fa';
 import './Footer.css';
 
-const Footer = ({ showCTA = true }) => {
+const Footer = ({ showCTA = false }) => {
   return (
     <footer className="footer-section">
       {showCTA && (

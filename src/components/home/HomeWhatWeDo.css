@@ -1,0 +1,144 @@
+/* What We Do */
+:root {
+  --primary: #C0FF00;
+}
+
+.services-section {
+  padding: 5rem 2rem;
+  max-width: 1320px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.section-tag {
+  color: var(--primary);
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.section-tag::after {
+  content: '';
+  width: 40px;
+  height: 1px;
+  background: var(--primary);
+  opacity: 0.5;
+}
+
+.section-title {
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+  max-width: 900px;
+}
+
+.section-title span { 
+    color: var(--primary); 
+    position: relative;
+    display: inline-block;
+}
+
+.section-subtitle {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  max-width: 650px;
+  margin-bottom: 5rem;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.service-card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 3rem 2.5rem;
+  border-radius: 24px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-card:hover { 
+    border-color: #C0FF00;
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.service-icon {
+  font-size: 2.22rem;
+  color: #C0FF00;
+  margin-bottom: 2rem;
+  display: inline-block;
+}
+
+.service-name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  color: #000000;
+  letter-spacing: -0.2px;
+}
+
+.service-desc {
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 1rem;
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+.view-all-wrapper {
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.view-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--primary);
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  padding: 1rem 2rem;
+  border: 1px solid rgba(192, 255, 0, 0.2);
+  border-radius: 100px;
+  transition: all 0.3s ease;
+}
+
+.view-all:hover {
+    background: var(--primary);
+    color: #000;
+    gap: 1.5rem;
+}
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+  .services-section {
+    padding: 5rem 1.5rem;
+  }
+  
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .service-card {
+    padding: 2.5rem 2rem;
+  }
+}

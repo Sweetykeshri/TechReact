@@ -1,0 +1,67 @@
+/* FAQ & CTA */
+.cta-banner {
+  width: min(1320px, calc(100% - 48px));
+  margin: 8.5rem auto;
+  background: linear-gradient(135deg, rgba(192, 255, 0, 0.12), rgba(192, 255, 0, 0.02));
+  border: 1px solid rgba(192, 255, 0, 0.15);
+  border-radius: 40px;
+  padding: 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+}
+
+.cta-content h3 {
+  font-size: 3rem;
+  color: #f7f7f7;
+  max-width: 500px;
+  line-height: 1.1;
+}
+
+.cta-content h3 span { color: var(--primary); }
+
+.cta-content p {
+  margin-top: 1.5rem;
+  font-size: 1.2rem;
+  color: rgba(224, 226, 215, 0.6);
+}
+
+.cta-actions {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.btn-cta-primary {
+  background: var(--primary);
+  color: black;
+  padding: 1.2rem 2rem;
+  border-radius: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.btn-cta-secondary {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 1.2rem 2rem;
+  border-radius: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+@media (max-width: 1024px) {
+  .cta-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 4rem 2rem;
+  }
+  .cta-content h3 { margin: 0 auto; }
+  .cta-actions { justify-content: center; }
+}
