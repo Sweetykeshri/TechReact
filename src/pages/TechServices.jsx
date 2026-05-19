@@ -193,7 +193,7 @@ const TechServices = () => {
         <div className="container">
           <div className="section-header">
             <span className="sub-badge">WHAT WE OFFER</span>
-            <h2 className="section-title">Our <span>Tech Services</span></h2>
+            <h2 className="section-title"><span style={{ color: '#ffffff' }}>Our</span> <span>Tech Services</span></h2>
             <p className="section-desc">
               High-impact, scalable and future-ready solutions tailored for startups and modern businesses.
             </p>
@@ -259,7 +259,7 @@ const TechServices = () => {
         <div className="container">
           <div className="section-header">
             <span className="sub-badge">OUR PROCESS</span>
-            <h2 className="section-title">How We <span>Work</span></h2>
+            <h2 className="section-title"><span style={{ color: '#ffffff' }}>How We</span> <span>Work</span></h2>
             <p className="section-desc">
               A transparent and agile process that turns your idea into a market-ready product.
             </p>
