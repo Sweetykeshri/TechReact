@@ -6,15 +6,16 @@
   min-height: calc(100vh - 78px);
   width: 100vw;
   max-width: 100%;
-  padding: 8rem 8vw 4rem; /* Standard side padding for alignment with logo */
+  padding: 8rem 8vw 4rem 0.5rem; /* Keep a clean margin while moving copy closer to the left edge */
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
   position: relative;
   z-index: 2;
   overflow: hidden;
-  background-image: linear-gradient(rgba(10, 11, 8, 0.94), rgba(10, 11, 8, 0.94)), url("/Hero/Homehero.png");
+  background-image: url("/Hero/Homehero.png");
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   background-attachment: fixed;
 }
 
@@ -150,12 +151,20 @@
 
 @media (max-width: 1200px) {
   .hero-section {
-    padding: 8rem 5% 4rem;
+    padding: 8rem 5% 4rem 0.5rem;
   }
   .hero-content {
     max-width: 100%;
   }
   .hero-btns {
     flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 7.5rem 1rem 4rem 0.5rem;
+    background-attachment: scroll;
+    background-position: center;
   }
 }

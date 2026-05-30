@@ -1,4 +1,10 @@
 /* FAQ & CTA */
+.cta-section {
+  background: #fff;
+  width: 100%;
+  padding: 0;
+}
+
 .cta-banner {
   width: min(1320px, calc(100% - 48px));
   margin: 8.5rem auto;
@@ -57,6 +63,10 @@
 }
 
 @media (max-width: 1024px) {
+  .cta-section {
+    background: #fff;
+  }
+
   .cta-banner {
     flex-direction: column;
     text-align: center;
@@ -64,4 +74,16 @@
   }
   .cta-content h3 { margin: 0 auto; }
   .cta-actions { justify-content: center; }
+}
+
+@media (max-width: 768px) {
+  .cta-section {
+    background: #fff;
+  }
+
+  .cta-banner {
+    width: calc(100% - 24px);
+    margin: 5rem auto;
+    padding: 3rem 1.25rem;
+  }
 }
