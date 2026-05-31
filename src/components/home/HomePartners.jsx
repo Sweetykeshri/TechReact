@@ -1,19 +1,31 @@
 import React from 'react';
 import './HomePartners.css';
 
+const partners = [
+  'playo',
+  'FANZIO',
+  'SPORTZIFY',
+  'ATHLOCITY',
+  'FITVERSE',
+  'GAMEON',
+  'QuickCourt',
+];
+
 const HomePartners = () => {
+  const track = [...partners, ...partners];
+
   return (
-    <section className="partners-section">
+    <section className="partners-section home-section" aria-label="Trusted partners">
       <div className="partners-wrap">
-        <h6 className="partners-title">TRUSTED BY INNOVATIVE STARTUPS & BRANDS</h6>
-        <div className="partner-logos">
-          <span className="partner-logo">playo</span>
-          <span className="partner-logo">FANZIO</span>
-          <span className="partner-logo">SPORTZIFY</span>
-          <span className="partner-logo">ATHLOCITY</span>
-          <span className="partner-logo">FITVERSE</span>
-          <span className="partner-logo">GAMEON</span>
-          <span className="partner-logo">QuickCourt</span>
+        <p className="partners-title">Trusted by Innovative Startups &amp; Brands</p>
+        <div className="partners-marquee">
+          <div className="partners-track">
+            {track.map((name, i) => (
+              <span key={`${name}-${i}`} className="partner-logo">
+                {name}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </section>

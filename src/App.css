@@ -1,7 +1,3 @@
-* {
-  box-sizing: border-box;
-}
-
 html,
 body,
 #root {
@@ -23,13 +19,74 @@ body {
   width: 100%;
   display: flex;
   flex-direction: column;
+  position: relative;
+  isolation: isolate;
+}
+
+/* Ambient glow behind all pages */
+.app-shell::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(circle at 15% 25%, rgba(198, 241, 53, 0.06), transparent 32%),
+    radial-gradient(circle at 85% 70%, rgba(125, 211, 252, 0.05), transparent 28%);
+  opacity: 0.9;
 }
 
 .app-main {
   width: 100%;
   flex: 1 0 auto;
+  padding-top: var(--nav-height);
+  position: relative;
+  z-index: 1;
 }
 
-a {
-  color: inherit;
+/* Shared page section backgrounds */
+.page-section-alt {
+  background:
+    linear-gradient(180deg, rgba(14, 17, 25, 0.65) 0%, rgba(14, 17, 25, 0.35) 100%);
+  border-block: 1px solid var(--border-subtle);
+}
+
+.page-section-glow {
+  position: relative;
+}
+
+.page-section-glow::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(198, 241, 53, 0.06), transparent 65%);
+}
+
+/* Readable body copy everywhere */
+p,
+.section-subtitle,
+.section-desc,
+.hero-desc,
+.hero-description,
+.about-paragraph,
+.story-desc,
+.approach-desc,
+.people-desc,
+.property-location,
+.step-desc,
+.f-text p,
+.stat-subtext,
+.value-desc,
+.time-desc,
+.node-sub,
+.cta-subtitle {
+  color: var(--text-secondary);
+}
+
+.caption,
+.offer-item-eyebrow,
+.partners-title,
+.stat-label {
+  color: var(--text-muted);
 }

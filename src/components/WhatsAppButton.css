@@ -9,7 +9,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
+  color: var(--text-primary);
   text-decoration: none;
   box-shadow: 0 10px 30px rgba(0,0,0,0.35), 0 0 0 3px rgba(37,211,102,0.06) inset;
   z-index: 2000;

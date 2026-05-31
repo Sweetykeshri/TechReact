@@ -1,13 +1,13 @@
-/* Partners Section */
+/* Partners — infinite marquee */
 .partners-section {
-  padding: 4.5rem 0;
-  border-top: 1px solid rgba(192, 255, 0, 0.08);
-  border-bottom: 1px solid rgba(192, 255, 0, 0.08);
-  background: rgba(10, 10, 10, 0.4);
+  padding: clamp(2.5rem, 5vw, 3.5rem) 0;
+  border-block: 1px solid var(--border-subtle);
+  background: rgba(14, 16, 23, 0.55);
+  overflow: hidden;
 }
 
 .partners-wrap {
-  width: min(1320px, calc(100% - 48px));
+  width: min(1320px, calc(100% - 2rem));
   margin: 0 auto;
 }
 
@@ -15,44 +15,66 @@
   display: block;
   text-align: center;
   font-size: 0.72rem;
-  font-weight: 800;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  color: rgba(224, 226, 215, 0.35);
-  margin-bottom: 2.8rem;
+  letter-spacing: 0.16em;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
 }
 
-.partner-logos {
+.partners-marquee {
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+}
+
+.partners-track {
   display: flex;
-  justify-content: space-around;
   align-items: center;
-  gap: 3rem;
-  opacity: 0.45;
-  filter: grayscale(1);
-  transition: opacity 0.3s ease;
-  flex-wrap: wrap;
+  gap: clamp(2.5rem, 6vw, 4.5rem);
+  width: max-content;
+  animation: marquee 32s linear infinite;
+}
+
+.partners-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
 
 .partner-logo {
-  font-size: 1.8rem;
-  color: #eeeeee;
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  color: var(--text-muted);
   font-weight: 700;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  transition: color 0.25s ease;
+  flex-shrink: 0;
 }
 
 .partner-logo:hover {
-  opacity: 1;
-  filter: grayscale(0);
   color: var(--primary);
 }
 
-@media (max-width: 768px) {
-  .partner-logos {
-    gap: 2rem;
+@media (prefers-reduced-motion: reduce) {
+  .partners-track {
+    animation: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    gap: 1.5rem 2.5rem;
   }
-  .partner-logo {
-    font-size: 1.4rem;
+
+  .partners-marquee {
+    mask-image: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .partners-track {
+    animation-duration: 24s;
   }
 }

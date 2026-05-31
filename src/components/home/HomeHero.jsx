@@ -1,17 +1,28 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FaArrowRight, FaCalendarAlt, FaUsers, FaCheckCircle } from 'react-icons/fa';
+import { FaArrowRight } from 'react-icons/fa';
 import './HomeHero.css';
+
+const stats = [
+  { value: '50+', label: 'Startups Built' },
+  { value: '98%', label: 'Client Satisfaction' },
+  { value: '24/7', label: 'Support Available' },
+];
 
 const HomeHero = () => {
   return (
     <section className="hero-section">
-      <motion.div
-        className="hero-content"
-        initial={{ opacity: 0, y: 18 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.75, ease: 'easeOut' }}
-      >
+      <div className="hero-glow hero-glow--left" aria-hidden />
+      <div className="hero-glow hero-glow--right" aria-hidden />
+
+      <div className="hero-inner">
+        <motion.div
+          className="hero-content"
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+        >
         <div className="badge">
           <span className="dot" />
           ARS KREEDASHALA TECH
@@ -26,36 +37,30 @@ const HomeHero = () => {
         </h1>
 
         <p className="hero-description">
-          Kreed Tech is the technology & innovation arm of Kreedashala,
+          Kreed Tech is the technology and innovation arm of Kreedashala,
           empowering startups with cutting-edge digital solutions to build,
-          launch and scale with confidence.
+          launch, and scale with confidence.
         </p>
 
         <div className="hero-btns">
-          <a href="#services" className="btn-primary">
-            BUILD YOUR STARTUP <FaArrowRight />
-          </a>
-          <a href="#contact" className="btn-secondary">
+          <Link to="/tech-services" className="btn-primary">
+            BUILD YOUR STARTUP <FaArrowRight aria-hidden />
+          </Link>
+          <Link to="/contact" className="btn-secondary">
             BOOK FREE CONSULTATION
-          </a>
+          </Link>
         </div>
 
-        <div className="trust-avatars">
-          <div className="trust-text">
-            <span>50+ Startups</span>
-            Trust Kreed Tech
-          </div>
+        <div className="trust-section">
+          {stats.map((item) => (
+            <div key={item.label} className="trust-stat">
+              <span className="trust-stat-value">{item.value}</span>
+              <span className="trust-stat-label">{item.label}</span>
+            </div>
+          ))}
         </div>
-      </motion.div>
-
-      <motion.div
-        className="hero-visual"
-        initial={{ opacity: 0, x: 20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.8 }}
-      >
-    
-      </motion.div>
+        </motion.div>
+      </div>
     </section>
   );
 };

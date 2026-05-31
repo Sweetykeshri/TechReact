@@ -1,0 +1,368 @@
+/* ─── Global responsive foundation ─── */
+
+/* Unified fluid container (used across pages) */
+.container {
+  width: min(var(--container-max, 1400px), calc(100% - clamp(1rem, 4vw, 2.5rem)));
+  margin-inline: auto;
+}
+
+/* Prevent layout overflow */
+.app-main,
+.home-container,
+[class*='-page'],
+[class*='-container'],
+section {
+  max-width: 100%;
+}
+
+/* Fluid section spacing */
+.section-fluid {
+  padding-inline: clamp(1rem, 4.8vw, 5rem);
+}
+
+/* ─── Tablet (≤1024px) ─── */
+@media (max-width: 1024px) {
+  .about-content-wrapper {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    text-align: center;
+  }
+
+  .about-paragraph,
+  .title-underline {
+    margin-inline: auto;
+  }
+
+  .about-badge-line {
+    justify-content: center;
+  }
+
+  .stats-bar {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    padding-top: 3rem;
+  }
+
+  .stat-subtext {
+    max-width: none;
+  }
+
+  .tech-hero {
+    padding: 4rem 0 6rem;
+    min-height: auto;
+  }
+
+  .bottom-features {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .projects-hero {
+    height: auto;
+    min-height: 70vh;
+    padding: 3rem clamp(1rem, 4vw, 2rem);
+  }
+
+  .startup-hero {
+    padding: 3rem 0 4rem;
+  }
+
+  .offers-section {
+    margin-top: 4rem;
+    padding-top: 4rem;
+  }
+
+  .cta-banner {
+    margin-top: 4rem !important;
+  }
+}
+
+/* ─── Mobile (≤768px) ─── */
+@media (max-width: 768px) {
+  /* Stack hero / CTA button groups */
+  .hero-btns,
+  .hero-actions,
+  .hero-btns,
+  .projects-hero-actions,
+  .sports-btns,
+  .cta-actions:not(.desktop-cta),
+  .cta-buttons,
+  .cta-actions-side,
+  .cta-right {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .hero-btns > *,
+  .hero-actions > *,
+  .projects-hero-actions > *,
+  .sports-btns > *,
+  .cta-actions > *,
+  .cta-buttons > *,
+  .cta-actions-side > *,
+  .cta-right > * {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Home sections */
+  .services-section,
+  .tech-section,
+  .real-state-section,
+  .process-section {
+    padding: clamp(3rem, 8vw, 5rem) clamp(1rem, 4vw, 1.25rem);
+  }
+
+  .why-section {
+    padding: clamp(3rem, 8vw, 5rem) 0;
+  }
+
+  .why-container {
+    width: min(1320px, calc(100% - 2rem));
+  }
+
+  .why-grid-items {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .why-visual {
+    display: flex;
+    justify-content: center;
+  }
+
+  .runner-img {
+    max-width: 100%;
+  }
+
+  .properties-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .partners-wrap {
+    width: calc(100% - 2rem);
+  }
+
+  .partner-logos {
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  /* About page */
+  .about-hero {
+    padding: 2rem 1rem;
+  }
+
+  .stats-bar {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .story-container,
+  .approach-container {
+    padding-inline: 1rem;
+    gap: 2.5rem;
+  }
+
+  .timeline-visual {
+    height: 360px;
+  }
+
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .value-card {
+    border-right: none !important;
+    border-bottom: 1px solid var(--border-subtle);
+    padding: 2rem 1rem;
+  }
+
+  .people-content {
+    padding: 3rem 1.25rem;
+    text-align: center;
+    align-items: center;
+  }
+
+  .people-desc {
+    margin-inline: auto;
+  }
+
+  .cta-content-inner {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1.25rem;
+    gap: 1.5rem;
+  }
+
+  /* Tech Services */
+  .tech-stack-banner {
+    padding: 1.75rem 1.25rem;
+    min-height: auto;
+  }
+
+  .stack-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .process-flow {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.5rem;
+  }
+
+  .offer-panel-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .offer-panel-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Projects */
+  .exact-showcase-section {
+    padding: 3rem clamp(1rem, 4vw, 1.5rem);
+  }
+
+  /* Sports Tech */
+  .sports-intro-section,
+  .sports-solutions-grid,
+  .sports-strategy-section,
+  .sports-trusted-section,
+  .sports-cta-section {
+    padding-inline: clamp(1rem, 4vw, 1.5rem);
+  }
+
+  .sports-cta-card {
+    padding: 2rem 1.25rem;
+  }
+
+  .ball-container {
+    width: min(220px, 60vw);
+    height: min(220px, 60vw);
+  }
+
+  .strategy-card {
+    padding: 2rem 1.25rem;
+  }
+
+  .strategy-stats {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Startup Support */
+  .startup-highlights {
+    padding: 3rem clamp(1rem, 4vw, 1.5rem);
+  }
+
+  .offer-panel-left {
+    height: 240px;
+  }
+
+  /* Site footer */
+  .site-footer__container {
+    padding-inline: clamp(1rem, 4vw, 1.5rem);
+  }
+
+  .cta-container {
+    padding-inline: clamp(1rem, 4vw, 1.5rem);
+  }
+
+  .cta-banner {
+    padding: clamp(2rem, 5vw, 3rem) clamp(1.25rem, 4vw, 2rem);
+    margin-bottom: 3rem;
+  }
+
+  .cta-btn {
+    min-width: unset;
+    width: 100%;
+  }
+
+  .cta-actions {
+    width: 100%;
+  }
+
+  /* Contact */
+  .contact-hero {
+    padding: 2rem 1rem 1rem;
+  }
+
+  .contact-body {
+    padding: 1.5rem 0 3rem;
+  }
+}
+
+/* ─── Small phones (≤480px) ─── */
+@media (max-width: 480px) {
+  .stats-bar {
+    grid-template-columns: 1fr;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .bottom-features,
+  .process-flow,
+  .stack-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .trust-section {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .hero-title,
+  .projects-hero h1,
+  .about-main-title {
+    font-size: clamp(1.85rem, 9vw, 2.75rem);
+  }
+
+  .section-title,
+  .section-title-center {
+    font-size: clamp(1.65rem, 7vw, 2.25rem);
+  }
+
+  .title-with-lines,
+  .intro-line-wrapper {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .deco-line,
+  .gold-line {
+    width: 40px;
+  }
+
+  .trusted-logos {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .logo-item {
+    border-right: none !important;
+    padding: 0;
+  }
+
+  .stat-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.75rem;
+  }
+}
+
+/* WhatsApp FAB — keep above mobile UI */
+@media (max-width: 768px) {
+  .whatsapp-fab {
+    bottom: max(14px, env(safe-area-inset-bottom));
+    right: max(14px, env(safe-area-inset-right));
+  }
+}

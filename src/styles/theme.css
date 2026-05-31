@@ -1,0 +1,125 @@
+/* Shared UI patterns — import after index.css */
+
+/* Primary & secondary buttons */
+.btn-primary,
+.nav-cta,
+.cta-btn.primary,
+.btn-cta-primary,
+.talk-expert-btn {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: var(--text-on-primary);
+  border: none;
+  font-weight: 700;
+  transition:
+    transform 0.22s cubic-bezier(0.2, 0.9, 0.2, 1),
+    box-shadow 0.22s ease,
+    filter 0.22s ease;
+  box-shadow: 0 4px 20px rgba(198, 241, 53, 0.22);
+}
+
+.btn-primary:hover,
+.nav-cta:hover,
+.cta-btn.primary:hover,
+.btn-cta-primary:hover,
+.talk-expert-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(198, 241, 53, 0.28);
+  filter: brightness(1.04);
+}
+
+.btn-secondary,
+.cta-btn.secondary,
+.btn-cta-secondary,
+.book-consult-btn,
+.meet-team-btn,
+.stack-btn {
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-primary);
+  border: 1px solid var(--primary-border);
+  font-weight: 700;
+  backdrop-filter: blur(8px);
+  transition:
+    transform 0.22s ease,
+    background 0.22s ease,
+    border-color 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+.btn-secondary:hover,
+.cta-btn.secondary:hover,
+.btn-cta-secondary:hover,
+.book-consult-btn:hover,
+.meet-team-btn:hover,
+.stack-btn:hover {
+  background: var(--primary-subtle);
+  border-color: var(--primary-border-strong);
+  transform: translateY(-2px);
+}
+
+.stack-btn:hover {
+  background: var(--primary);
+  color: var(--text-on-primary);
+}
+
+/* Glass card surface */
+.glass-card {
+  background: rgba(18, 21, 30, 0.92);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xl);
+  backdrop-filter: blur(16px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Section badge / tag */
+.section-badge,
+.sub-badge,
+.tech-badge,
+.badge,
+.about-badge-line .badge-text,
+.story-badge,
+.approach-badge,
+.people-badge,
+.cta-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* Page container */
+.page-container,
+.container {
+  width: min(var(--container-max), calc(100% - 2rem));
+  margin-inline: auto;
+}
+
+/* Section heading highlight */
+.highlight,
+.section-title span,
+.hero-title span,
+.about-main-title .highlight {
+  color: var(--primary);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-elevated);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(198, 241, 53, 0.35);
+}

@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Home from './pages/Home'
@@ -16,7 +15,23 @@ import './App.css'
 function App() {
   return (
     <Router>
-      <Toaster position="top-right" />
+      <Toaster
+        position="top-right"
+        toastOptions={{
+          style: {
+            background: 'var(--bg-surface)',
+            color: 'var(--text-primary)',
+            border: '1px solid var(--border-default)',
+            borderRadius: '12px',
+            fontFamily: 'var(--sans)',
+            fontSize: '0.9rem',
+            boxShadow: 'var(--shadow-md)',
+          },
+          success: {
+            iconTheme: { primary: '#C6F135', secondary: '#0A0B0F' },
+          },
+        }}
+      />
       <div className="app-shell">
         <Navbar />
         <main className="app-main">

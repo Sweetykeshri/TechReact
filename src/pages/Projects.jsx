@@ -13,7 +13,6 @@ import {
 } from 'react-icons/hi2';
 import { HiUserGroup } from 'react-icons/hi';
 import './Projects.css';
-import './Projects.css';
 
 const showcaseProjects = [
   {

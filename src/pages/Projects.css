@@ -1,7 +1,24 @@
-﻿.projects-page {
-  background-color: #000;
-  color: #fff;
+.projects-page {
+  background: transparent;
+  color: var(--text-primary);
   min-height: 100vh;
+  position: relative;
+}
+
+.projects-page::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 65% 45% at 80% 10%, rgba(198, 241, 53, 0.05), transparent 50%),
+    radial-gradient(ellipse 55% 40% at 10% 80%, rgba(125, 211, 252, 0.04), transparent 45%);
+  z-index: 0;
+}
+
+.projects-page > * {
+  position: relative;
+  z-index: 1;
 }
 
 /* HERO SECTION */
@@ -27,7 +44,7 @@
 .projects-breadcrumb {
   font-size: 0.85rem;
   letter-spacing: 2px;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--text-secondary);
   margin-bottom: 2rem;
   font-weight: 600;
 }
@@ -42,7 +59,7 @@
   line-height: 1.1;
   margin-bottom: 2rem;
   text-transform: uppercase;
-  color: #ffffff;
+  color: var(--text-primary);
 }
 
 .projects-hero h1 span {
@@ -63,7 +80,7 @@
   flex-wrap: wrap;
 }
 
-.btn-primary {
+.projects-page .btn-primary {
   background-color: var(--primary);
   color: #000;
   padding: 1.1rem 2.2rem;
@@ -78,18 +95,18 @@
   border: 1px solid var(--primary);
 }
 
-.btn-primary:hover {
+.projects-page .btn-primary:hover {
   background-color: transparent;
   color: var(--primary);
   transform: translateY(-3px);
   box-shadow: 0 5px 20px rgba(188, 254, 47, 0.4);
 }
 
-.btn-outline {
+.projects-page .btn-outline {
   transition: all 0.3s ease;
 }
 
-.btn-outline:hover {
+.projects-page .btn-outline:hover {
   border-color: var(--primary);
   background-color: rgba(188, 254, 47, 0.1);
 }
@@ -189,7 +206,7 @@
 
 .stat-label {
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--text-secondary);
   margin-top: 0.3rem;
 }
 
@@ -216,7 +233,7 @@
 .filter-btn {
   background: none;
   border: none;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--text-secondary);
   font-size: 0.85rem;
   font-weight: 600;
   letter-spacing: 1px;
@@ -269,7 +286,7 @@
 
 .exact-project-card {
   display: flex;
-  background: #0d0d0d;
+  background: var(--bg-elevated);
   border-radius: 12px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.05);
@@ -279,7 +296,7 @@
 
 .exact-project-card:hover {
   transform: translateY(-5px);
-  border-color: #ccff00;
+  border-color: var(--primary);
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
 }
 
@@ -331,7 +348,7 @@
 }
 
 .cat-text {
-  color: #ccff00;
+  color: var(--primary);
   font-size: 0.85rem;
   font-weight: 700;
   letter-spacing: 1.5px;
@@ -342,12 +359,12 @@
   font-size: 2.2rem;
   font-weight: 700;
   margin-bottom: 15px;
-  color: #fff;
+  color: var(--text-primary);
 }
 
 .card-description {
   font-size: 1.05rem;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--text-secondary);
   line-height: 1.6;
   margin-bottom: 25px;
 }
@@ -372,7 +389,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  color: #ccff00;
+  color: var(--primary);
   text-decoration: none;
   font-weight: 700;
   font-size: 0.9rem;
@@ -392,8 +409,8 @@
 
 .view-all-projects-btn {
   background: transparent;
-  border: 1px solid #ccff00;
-  color: #ccff00;
+  border: 1px solid var(--primary);
+  color: var(--primary);
   padding: 14px 28px;
   border-radius: 6px;
   font-weight: 700;
@@ -405,7 +422,7 @@
 }
 
 .view-all-projects-btn:hover {
-  background: #ccff00;
+  background: var(--primary);
   color: #000;
 }
 
@@ -414,13 +431,13 @@
   padding: 60px 8%;
   text-align: center;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
-  background: linear-gradient(to bottom, #000, #050505);
+  background: linear-gradient(to bottom, #000, var(--bg-base));
 }
 
 .section-label {
   font-size: 0.85rem;
   letter-spacing: 3px;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--text-secondary);
   margin-bottom: 3rem;
   position: relative;
   display: inline-block;
@@ -432,14 +449,14 @@
   top: 50%;
   width: 50px;
   height: 1px;
-  background: #ccff00;
+  background: var(--primary);
 }
 
 .section-label::before { left: -70px; }
 .section-label::after { right: -70px; }
 
 .section-label .highlight {
-  color: #ccff00;
+  color: var(--primary);
   font-weight: 700;
 }
 
@@ -456,7 +473,7 @@
   font-size: 1.5rem;
   font-weight: 800;
   letter-spacing: 2px;
-  color: #fff;
+  color: var(--text-primary);
 }
 
 /* TESTIMONIAL & FEATURES */
@@ -479,7 +496,7 @@
 
 .quote-icon {
   font-size: 8rem;
-  color: #ccff00;
+  color: var(--primary);
   opacity: 0.1;
   position: absolute;
   top: -60px;
@@ -490,7 +507,7 @@
 .quote-text {
   font-size: 1.8rem;
   line-height: 1.5;
-  color: #fff;
+  color: var(--text-primary);
   font-style: italic;
   margin-bottom: 40px;
 }
@@ -509,13 +526,13 @@
 }
 
 .client-name {
-  color: #ccff00;
+  color: var(--primary);
   font-size: 1.2rem;
   margin-bottom: 5px;
 }
 
 .client-role {
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--text-secondary);
   font-size: 0.9rem;
 }
 
@@ -533,7 +550,7 @@
 }
 
 .dot.active {
-  background: #ccff00;
+  background: var(--primary);
   width: 20px;
   border-radius: 10px;
 }
@@ -561,19 +578,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #ccff00;
+  color: var(--primary);
   font-size: 1.5rem;
   flex-shrink: 0;
 }
 
 .feature-text-v2 h4 {
-  color: #fff;
+  color: var(--text-primary);
   font-size: 1.2rem;
   margin-bottom: 8px;
 }
 
 .feature-text-v2 p {
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--text-secondary);
   font-size: 0.95rem;
   line-height: 1.5;
 }
@@ -599,13 +616,13 @@
 
 .cta-content-v2 h2 {
   font-size: 3rem;
-  color: #fff;
+  color: var(--text-primary);
   margin-bottom: 15px;
 }
 
 .cta-content-v2 p {
   font-size: 1.2rem;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--text-secondary);
 }
 
 .cta-visual-v2 {
@@ -626,7 +643,7 @@
 }
 
 .talk-experts-btn {
-  background: #ccff00;
+  background: var(--primary);
   color: #000;
   padding: 16px 30px;
   border-radius: 8px;
@@ -647,7 +664,7 @@
 
 .book-consult-btn {
   background: transparent;
-  color: #ccff00;
+  color: var(--primary);
   padding: 16px 30px;
   border-radius: 8px;
   font-weight: 700;
@@ -662,7 +679,7 @@
 
 .book-consult-btn:hover {
   background: rgba(204, 255, 0, 0.05);
-  border-color: #ccff00;
+  border-color: var(--primary);
 }
 
 /* MEDIA QUERIES (At the end) */
@@ -730,12 +747,26 @@
 }
 
 @media (max-width: 768px) {
-  .card-title {
-    font-size: 1.8rem;
+  .projects-hero {
+    height: auto;
+    min-height: 65vh;
+    padding: 2.5rem clamp(1rem, 4vw, 1.5rem);
   }
-  
+
+  .projects-hero h1 {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+
+  .projects-hero-desc {
+    font-size: 1rem;
+  }
+
+  .card-title {
+    font-size: 1.5rem;
+  }
+
   .cta-content-v2 h2 {
-    font-size: 2.22rem;
+    font-size: clamp(1.65rem, 6vw, 2.22rem);
   }
 }
 
@@ -744,7 +775,8 @@
     flex-direction: column;
   }
   
-  .btn-primary, .btn-outline {
+  .projects-page .btn-primary,
+  .projects-page .btn-outline {
     width: 100%;
     justify-content: center;
   }

@@ -1,5 +1,6 @@
 import React from 'react';
-import { FaArrowRight, FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube, FaEnvelope, FaPhoneAlt, FaMapMarkerAlt, FaThLarge } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+import { FaArrowRight } from 'react-icons/fa';
 import { HiOutlineCodeBracket } from 'react-icons/hi2';
 import { HiOutlineCalendar, HiOutlineLightBulb, HiOutlineChartBar, HiOutlineRocketLaunch } from 'react-icons/hi2';
 import { FiTarget, FiDollarSign, FiZap, FiLayers, FiShield, FiTrendingUp, FiPenTool, FiCheckCircle } from 'react-icons/fi';
@@ -243,12 +244,12 @@ const StartupSupport = () => (
             <p>Let's build something extraordinary together.</p>
           </div>
           <div className="cta-buttons">
-            <button className="btn-primary">
+            <Link to="/contact" className="btn-primary">
               TALK TO OUR EXPERTS <FaArrowRight />
-            </button>
-            <button className="btn-outline">
+            </Link>
+            <Link to="/contact" className="btn-outline">
               <HiOutlineCalendar /> BOOK FREE CONSULTATION
-            </button>
+            </Link>
           </div>
         </div>
       </div>
